@@ -12,16 +12,29 @@ class ProfileView extends GetView<ProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+    appBar: AppBar(
         title: const Text('Profile'),
-        backgroundColor: const Color.fromARGB(255, 123, 194, 90),
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
-            onPressed: controller.logout,
+            onPressed: () {
+              Get.defaultDialog(
+                title: "Logout",
+                middleText: "Apakah Anda yakin ingin logout?",
+                textCancel: "Gak Jadi Deh",
+                textConfirm: "Iya",
+                confirmTextColor: Colors.white,
+                onConfirm: () {
+                  controller.logout();
+                  Get.back(); // Menutup dialog
+                },
+              );
+            },
           ),
         ],
       ),
+
+     
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
