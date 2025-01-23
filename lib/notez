@@ -1,0 +1,52 @@
+1. install flutter : flutter create namaproject -> cd namaproject
+
+2. install package get : - flutter pub global activate get_cli
+                         - flutter pub add get (biar ga eror)   
+3. runing flutter : flutter run (gitbash) / f5 (terminal vscode)
+
+4. - obs = obsivator 
+   - 0.obs = biar bisa dirubah 
+   - ''.obs = biar tidak bisa di rubah
+
+5. inisiasi project menggunakan get x 
+   get init -> di terminal vscode   
+
+6. install package pendukung
+   - flutter pub add get_storage 
+   - flutter pub add google_fonts
+   - flutter pub add hexcolor
+   - flutter pub add lottie
+   - flutter pub add zoom_tap_animation
+
+7. tahap 2 
+ void on init  : kegiatan dipanggil lebih awal 
+ void on ready : ketika semua widget sudah siap
+ void on close : ketika dihapus atau menutup halaman splash screen / mengclose
+ 
+ body : SingleChildScrolllView() -> untuk menghindari overflow / warning merah
+
+ COPY RESPONSE YOUR EVENT - JSON TO DART - COPY KE DASHBOARD.VIEW
+
+ MODEL PADA FLUTTER ADALAH 'DATA'
+ FUTURE BUILDER = APA YANG MAU DI LAKUKAN , APA YANG MAU DI BUAT
+ onPressed = Tujuan nya kemana
+
+ Confirmation delete 
+ judul detail event nya sesuai
+ dan tambah lagi isi detail event
+ profile 
+ logout -> remove token,
+
+
+
+
+
+
+
+
+
+   PROJEK BUAT P5 (BUAT FEBRUARI  AKHIR)
+   1.METODDDE PENGEMBANGAN PERANGKAT LUNAK (XP)
+   2.JURNAL HARIAN (DICEK & DIKUMPULKAN) DALAM BENTUK PROPOSAL
+   3.HOSTING (PERENCANAAN)
+   4.RINCIAN BIAYA ()

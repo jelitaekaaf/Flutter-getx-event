@@ -25,6 +25,7 @@ class EditView extends GetView {
         centerTitle: true, // Tengahin judul biar simetris
         backgroundColor: HexColor('#feeee8'), // Warna pastel yang calming
       ),
+      
       backgroundColor: HexColor('#feeee8'), // Latar belakang sama kayak AppBar
       body: SingleChildScrollView(
         child: FutureBuilder<DetailEventResponse>(

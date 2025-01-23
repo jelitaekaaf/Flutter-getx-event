@@ -34,9 +34,15 @@ class YourEventView extends GetView {
         },
         child: const Icon(Icons.add), // Menampilkan ikon add
       ),
-      appBar: AppBar(
-        title: const Text('Your Event'), // Judul aplikasi
-        centerTitle: true, // Menyusun judul di tengah
+       appBar: AppBar(
+        title: const Text('Your Event'),
+        backgroundColor: const Color.fromARGB(255, 22, 74, 13),
+        centerTitle: true,
+        titleTextStyle: const TextStyle(
+          color: Colors.white, // Mengatur warna teks menjadi putih
+          fontSize: 20, // Ukuran teks (opsional)
+          fontWeight: FontWeight.bold, // Gaya huruf (opsional)
+        ),
       ),
       body: Padding(
         // Memberikan padding di seluruh body

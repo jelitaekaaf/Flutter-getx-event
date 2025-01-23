@@ -13,12 +13,21 @@ class AddView extends GetView {
   Widget build(BuildContext context) {
     // Nih, bikin controller buat ngurusin dashboard pake Get.put
     DashboardController controller = Get.put(DashboardController());
+    controller.nameController.clear();
+    controller.locationController.clear();
+    controller.descriptionController.clear();
+    controller.eventDateController.clear();
     return Scaffold(
       // AppBar nih, buat header atas. Judulnya "Add Your Event", terus ada di tengah biar estetik
       appBar: AppBar(
-        title: const Text('Add Your Event'), // Judul biar kelihatan niat
-        centerTitle: true, // Tengahin judul, biar vibes-nya enak
-        backgroundColor: HexColor('#feeee8'), // Warna pastel biar soft
+        title: const Text('Add Your Event'),
+        backgroundColor: const Color.fromARGB(255, 22, 74, 13),
+        centerTitle: true,
+        titleTextStyle: const TextStyle(
+          color: Colors.white, // Mengatur warna teks menjadi putih
+          fontSize: 20, // Ukuran teks (opsional)
+          fontWeight: FontWeight.bold, // Gaya huruf (opsional)
+        ),
       ),
       // Latar belakang layar, warnanya pastel juga. Matching dong!
       backgroundColor: HexColor('#feeee8'),

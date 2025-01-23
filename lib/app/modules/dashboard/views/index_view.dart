@@ -1,23 +1,29 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: unused_import
 
+import 'package:flutter/material.dart';
+import 'package:get_event/app/data/events_response.dart';
+import 'package:get_event/app/modules/dashboard/controllers/dashboard_controller.dart';
+import 'package:get_event/app/modules/dashboard/views/dashboard_view.dart';
 import 'package:get/get.dart';
+import 'package:get_event/app/modules/dashboard/views/event_detail_view.dart';
 import 'package:lottie/lottie.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
-
-import '../../../data/events_response.dart';
-import '../controllers/dashboard_controller.dart';
-import 'event_detail_view.dart';
 
 class IndexView extends GetView {
   const IndexView({super.key});
   @override
   Widget build(BuildContext context) {
+    // Menginisialisasi controller untuk Dashboard menggunakan GetX
     DashboardController controller = Get.put(DashboardController());
+
+    // Membuat ScrollController untuk mengontrol scroll pada ListView
     final ScrollController scrollController = ScrollController();
+
     return Scaffold(
       appBar: AppBar(
+        // Membuat AppBar dengan judul "Event List"
         title: const Text('Event List'),
-        centerTitle: true,
+        centerTitle: true, // Menjadikan judul di tengah AppBar
       ),
       body: Padding(
         padding:
@@ -51,13 +57,11 @@ class IndexView extends GetView {
               shrinkWrap:
                   true, // Membatasi ukuran ListView agar sesuai dengan konten
               itemBuilder: (context, index) {
+                final event = snapshot.data!.events![index];
                 return ZoomTapAnimation(
                   onTap: () {
                     // Navigasi ke EventDetailView saat item ditekan
-                    Get.to(
-                      () => EventDetailView(
-                          eventId: snapshot.data!.events![index].id!),
-                    );
+                    Get.to(() => EventDetailView(event: event));
                   },
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment
@@ -83,7 +87,7 @@ class IndexView extends GetView {
                       const SizedBox(height: 16), // Jarak antara elemen
                       // Menampilkan judul event
                       Text(
-                        snapshot.data!.events![index].name.toString(),
+                        '${snapshot.data!.events![index].name}',
                         style: const TextStyle(
                           fontSize: 24,
                           fontWeight:
@@ -93,7 +97,7 @@ class IndexView extends GetView {
                       const SizedBox(height: 8), // Jarak antara elemen
                       // Menampilkan deskripsi event
                       Text(
-                        snapshot.data!.events![index].description.toString(),
+                        '${snapshot.data!.events![index].description}',
                         style: const TextStyle(
                           fontSize: 16,
                           color: Colors.grey, // Warna teks abu-abu
@@ -111,8 +115,7 @@ class IndexView extends GetView {
                               width: 8), // Jarak antara ikon dan teks
                           Expanded(
                             child: Text(
-                              snapshot.data!.events![index].location
-                                  .toString(), // Lokasi event
+                              '${snapshot.data!.events![index].location}', // Lokasi event
                               style: const TextStyle(
                                 fontSize: 16,
                                 color: Colors.black, // Warna teks hitam
